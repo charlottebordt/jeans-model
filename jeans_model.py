@@ -17,7 +17,6 @@ from numerical_methods import RK4
 
 class SIDM:
     '''
-
     This class will return the mass, mass density and velocity distribution modelling a SIDM halo. 
 
     - r_s [length], rho_s[mass over volume], sigma_over_m[area over mass], t_age[time] are the defining halo quantities 
@@ -61,13 +60,6 @@ class SIDM:
         else: self.fname = self.__get_filename()
         self.repress_loadHalo = repress_loadHalo
         self.saveHalo = saveHalo
-        
-        # To-Do-List: 
-        if False:# self.debugging: 
-            print('''To-Do-List:
-            - check if both tolerances make sense
-            - nu0_guess for different r_s, rho_s
-            - for later: hdf5 instaed of pickle\n''')
 
         # Constructing the halo    
         if self.truncated: self.profile_nfw = tNFW(r_s, rho_s)
